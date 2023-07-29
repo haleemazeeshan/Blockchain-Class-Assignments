@@ -1,0 +1,16 @@
+import hashlib
+
+# Accept the online hash calculated on online website as input
+online_hash = "c27783392976304d9ec296c6cf318f4145e780d02b78c679347e93408553a59c"
+
+# Import the file and calculate the hash using SHA-256
+file_path = r"C:\Users\Zeeshan Khan\Downloads\Lab5-6-2023.pdf"
+with open(file_path, "rb") as file:
+    content = file.read()
+    file_hash = hashlib.sha256(content).hexdigest()
+
+# (Compare the hashes and print the result
+if online_hash == file_hash:
+    print("Hashes match!")
+else:
+    print("Hashes do not match.")
